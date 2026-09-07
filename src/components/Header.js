@@ -1,7 +1,7 @@
 /**
  * FactoryPulse V1 - Header Component
  */
-import { FACTORY_INFO } from '../data/demoData.js';
+import { FACTORY_INFO, formatCurrentLocalDate } from '../data/demoData.js';
 import { LOGO_SVG, AVATAR_SVG } from '../assets/assets.js';
 
 export function renderHeader(state = {}) {
@@ -12,6 +12,7 @@ export function renderHeader(state = {}) {
   const roleBadge = role || 'AUTHENTICATED';
   const roleColorText = isOwner ? 'text-primary' : 'text-tertiary';
   const roleColorDot = isOwner ? 'bg-primary' : 'bg-tertiary';
+  const currentDateStr = formatCurrentLocalDate();
 
   return `
   <header class="fixed top-0 inset-x-0 z-50 bg-surface/95 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
@@ -28,7 +29,7 @@ export function renderHeader(state = {}) {
             <span class="w-1.5 h-1.5 bg-tertiary rounded-none inline-block flex-shrink-0"></span>
             <span class="text-label-caps font-label-caps text-tertiary truncate leading-none">${FACTORY_INFO.name}</span>
             <span class="text-label-caps font-label-caps text-on-surface-variant leading-none">•</span>
-            <span class="text-label-caps font-label-caps text-on-surface-variant truncate leading-none">${FACTORY_INFO.demoDate}</span>
+            <span class="text-label-caps font-label-caps text-on-surface-variant truncate leading-none">${currentDateStr}</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
  * FactoryPulse V1 - FilterBar Component
  * Renders touch-friendly filter chips carousel and quick search input
  */
+import { formatCurrentLocalDayMonth } from '../data/demoData.js';
 
 export function renderFilterBar(searchQuery = '', totalMachinesCount = 10) {
   const hasQuery = searchQuery.length > 0;
@@ -12,7 +13,7 @@ export function renderFilterBar(searchQuery = '', totalMachinesCount = 10) {
       <!-- Date Chip -->
       <button class="flex items-center gap-space-xs px-space-sm py-2 bg-surface-container-high active:bg-surface-bright rounded text-on-surface whitespace-nowrap min-h-touch-target-min transition-colors flex-shrink-0" type="button">
         <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
-        <span class="text-body-sm font-body-sm font-semibold">Today (05 Sep)</span>
+        <span class="text-body-sm font-body-sm font-semibold">Today (${formatCurrentLocalDayMonth()})</span>
         <span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
       </button>
 

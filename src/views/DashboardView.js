@@ -4,6 +4,7 @@
  * Computes all plant KPIs dynamically from live public.production_entries and public.machines.
  */
 import { calculateProductionTotals } from '../services/dataService.js';
+import { formatCurrentLocalDate } from '../data/demoData.js';
 
 export function renderDashboardView(state) {
   const { factory, machines, records, isLoading, loadError } = state;
@@ -92,7 +93,7 @@ export function renderDashboardView(state) {
             <span>•</span>
             <span>${factory.location || 'Pune, Maharashtra'}</span>
             <span>•</span>
-            <span class="font-mono text-on-surface font-medium">05 Sep 2026</span>
+            <span class="font-mono text-on-surface font-medium">${formatCurrentLocalDate()}</span>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">

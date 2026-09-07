@@ -16,6 +16,34 @@ export const FACTORY_INFO = {
   owner: 'Rajesh Patil',
 };
 
+/**
+ * Formats a Date object using the browser's local timezone into 'DD Mon YYYY' format (e.g. '07 Sep 2026').
+ * Uses browser local date, not UTC.
+ * @param {Date} [date=new Date()]
+ * @returns {string} Formatted local date string
+ */
+export function formatCurrentLocalDate(date = new Date()) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+
+/**
+ * Formats a Date object using the browser's local timezone into 'DD Mon' format (e.g. '07 Sep').
+ * Uses browser local date, not UTC.
+ * @param {Date} [date=new Date()]
+ * @returns {string} Formatted local day and month string
+ */
+export function formatCurrentLocalDayMonth(date = new Date()) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const month = months[date.getMonth()];
+  return `${day} ${month}`;
+}
+
+
 export const MACHINES = [
   { id: 'CNC-01', name: 'CNC-01', type: 'Heavy Turning', status: 'Running' },
   { id: 'CNC-02', name: 'CNC-02', type: 'Lathe Center', status: 'Running' },
