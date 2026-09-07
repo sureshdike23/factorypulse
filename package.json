@@ -1,0 +1,21 @@
+{
+  "name": "factorypulse-v1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FactoryPulse V1 - Mobile-first production reporting web application for small and medium manufacturing companies",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000",
+    "serve": "python -m http.server 3000"
+  },
+  "keywords": [
+    "factorypulse",
+    "manufacturing",
+    "production-reporting",
+    "industrial-ui",
+    "mobile-first"
+  ],
+  "author": "FactoryPulse Team",
+  "license": "UNLICENSED"
+}
